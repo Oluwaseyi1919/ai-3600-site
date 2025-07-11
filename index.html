@@ -1,42 +1,247 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You | AI 360°</title>
+  <title>AI 360° - Smart Business Tools</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
+      background-color: #f9fafe;
       color: #333;
-      text-align: center;
-      padding: 50px 20px;
     }
-    .container {
-      background: white;
-      padding: 40px;
+    header {
+      background-color: #1f4ab4;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #eef3ff;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
       max-width: 600px;
       margin: 0 auto;
+    }
+    .tools-section {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1em;
+      color: #555;
+    }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .tool {
+      background-color: white;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
     }
-    h1 {
-      color: #1f4ab4;
+    .tool:hover {
+      background-color: #f0f4ff;
     }
-    a {
-      color: #00bfff;
-      font-weight: bold;
+    .tool::after {
+      content: "▼";
+      font-size: 0.8em;
+      color: #888;
+      display: block;
+      margin-top: 8px;
+    }
+    .tool-description {
+      display: none;
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #555;
+    }
+    .tool.active .tool-description {
+      display: block;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .section p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .review {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .payment {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .payment h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .payment a.button {
+      background-color: #635bff;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .contact {
+      background: #eef3ff;
+      padding: 40px 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button[type="submit"] {
+      background: #1f4ab4;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    footer {
+      background-color: #1f4ab4;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .image {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .image img {
+      width: 90%;
+      max-width: 800px;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".tool").forEach(tool => {
+        tool.addEventListener("click", function () {
+          tool.classList.toggle("active");
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Thank You for Your Purchase!</h1>
-    <p>We’ve sent a confirmation email with your access details.</p>
-    <p><strong>This access is exclusive to you. Please don’t share the link, as each copy is monitored.</strong></p>
-    <p>If you haven’t received your email within a few minutes, check your spam folder or contact us at skd.publishingco@gmail.com.</p>
-    <p>Return to <a href="https://360tool.created.app/" target="_blank">AI 360° Tool</a></p>
+  <header>
+    <h1>AI 360°</h1>
+    <a href="#contact">Contact Us</a>
+  </header>
+
+  <section class="hero">
+    <h2>Streamline Operations, Boost Productivity, and Scale Smarter</h2>
+    <p>Use powerful AI tools to generate content, deliver customer support, create graphics and logos, get tailored business forecasts, and build strategic growth plans — no tech skills needed.</p>
+  </section>
+
+  <div class="image">
+    <img src="https://i.postimg.cc/mrkLGbB0/edited-animation-2.png" alt="AI Tool Dashboard">
   </div>
+
+  <div class="tools-section">
+    <p>Click a tool below to see what it does.</p>
+  </div>
+
+  <section class="tools">
+    <div class="tool">Content Generator<div class="tool-description">Create blogs, product descriptions, and social media posts in seconds.</div></div>
+    <div class="tool">Business Planner<div class="tool-description">Turn your ideas into a structured, AI-assisted growth roadmap.</div></div>
+    <div class="tool">Graphic Design<div class="tool-description">Design logos, banners, and visual assets without hiring a designer.</div></div>
+    <div class="tool">Chatbot Builder<div class="tool-description">Set up 24/7 support bots that talk to your customers automatically.</div></div>
+    <div class="tool">Ad Reviewer<div class="tool-description">Get instant feedback and improve your ads before launching.</div></div>
+    <div class="tool">Email Generator<div class="tool-description">Craft high-converting emails tailored to your audience and offer.</div></div>
+  </section>
+
+  <section class="section">
+    <h3>💡 What Makes AI 360° a Game Changer for Entrepreneurs</h3>
+    <p>Instant results. Business owners can create forecasts, generate content, and design marketing assets in minutes using intuitive tools. No coding, no technical skills required — just ideas and a vision.</p>
+  </section>
+
+  <section class="reviews">
+    <div class="review">"The business forecasting tool is spot on — gave me projections I actually used for my pitch deck!"</div>
+    <div class="review">"Built an amazing customer service system using the chatbot builder. It's saving me hours every week!"</div>
+    <div class="review">"Incredibly intuitive. I got professional-looking content and logos without hiring a designer."</div>
+    <div class="review">"This changed how I plan — the AI helped build my growth roadmap in less than an hour."</div>
+  </section>
+
+  <section class="payment">
+    <h3>Get Full Access – One-Time Payment of $50</h3>
+    <a class="button" href="https://buy.stripe.com/5kQ14m5Vc06w7G1b4e3cc00" target="_blank">Pay Securely with Stripe</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <h3>Contact Us</h3>
+    <form action="https://formspree.io/f/xwkdgepl" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AI 360°. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
+
